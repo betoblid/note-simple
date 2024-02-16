@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nw Note - Refactured</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="http://cdn.date-fns.org/v1.0.0/date_fns.min.js"></script>
+</head>
+
+<body>
+    <header class="bg-zinc-900">
+        <div class="flex items-center justify-around py-2 max-w-[1412px] mx-auto">
+            <figure>
+                <img src="asset/logo.svg" alt="logo de nosso note" class="w-32">
+            </figure>
+            <form action="" class="flex items-center gap-1 border px-1 w-80">
+                <label for="search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search text-white" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                </label>
+                <input type="text" name="search" id="search"
+                    class="bg-transparent text-zinc-50 px-1 w-full text-base outline-none"
+                    placeholder="Escreva sua anotação">
+            </form>
+            <div>
+                <button id="dowloand" type="button" class="text-base font-bold bg-green-600 px-2 rounded-md text-zinc-200 hidden md:block">
+                    Dowloand Note
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="bg-zinc-950 relative">
+
+
+            <div id="edito"
+                class="w-96 h-96 bg-zinc-50 fixed md:left-1/2 top-1/4 md:top-1/2 inset-0 md:inset-auto md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] md:h-[60vh] w-full rounded-xl flex flex-1 flex-col justify-between items-center overflow-hidden bg-zinc-700 hidden z-10">
+
+                <button id="noteEdito" type="button" class="font-bold text-lg absolute right-2 top-0 text-white">
+                    X
+                </button>
+                <div class="text-center mt-10 w-full">
+                    <textarea autofocus
+                        class="w-full md:max-h-96 h-40 bg-transparent outline-none text-white text-base px-2 placeholder:text-zinc-200"
+                        name="textMensage" id="textMensage" cols="20" rows="20"
+                        placeholder="Digite sua marcação aqui"></textarea>
+                </div>
+
+                <button id="btnSaveNote"
+                    class="bg-green-500 w-full py-4 font-bold text-zinc-200 hover:bg-green-600">Salvar Nota</button>
+            </div>
+
+
+
+            <div class="max-w-[1212px] min-h-screen mx-auto py-10 ">
+
+                <div id="ContainerNote" class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 auto-rows-[250px] gap-2 ">
+
+                    <div id="openEditor" onclick="HandlerEditor()"
+                        class="bg-gray-700 w-full text-white flex items-center justify-center flex-col cursor-pointer">
+                        <h2 class="font-bold text-lg">Criar uma Nota</h2>
+                        <p class="">Adicione uma nova nota aqui</p>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
